@@ -1,0 +1,307 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <title>TLE Eliminators</title>
+        <link rel="shortcut icon" href="{% static 'images/tle_logo.jpeg' %}" type="image/x-icon">
+    </head>
+
+    <body>
+        <!-- Navigation Bar -->
+        <nav class="navbar bg-dark text-white navbar-expand-lg navbar-dark">
+            <div class="container mt-2">
+                <img src="{% static 'images/tle_logo.jpeg' %}" class="img-fluid rounded float-start logo-size m-1" alt="">
+                <h2 class="px-4 fs-2 m-1"><a href="{% url 'home' %}" class="text-white" style="text-decoration: none;">TLE
+                        Eliminators</a></h2>
+        
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span
+                        class="navbar-toggler-icon"></span></button>
+        
+                <div class="collapse navbar-collapse pt-2" id="navmenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nam-items">
+                            <a href="#DSA" class="nav-link under-border px-3">DSA Course</a>
+                        </li>
+                        <li class="nam-items">
+                            <a href="#CP" class="nav-link under-border px-3">CP Course</a>
+                        </li>
+                        <li class="nam-items">
+                            <a href="{% url 'dailytask' %}" class="nav-link under-border px-3">Daily Task</a>
+                        </li>
+                        <li class="nam-items">
+                            <a href="#about" class="nav-link under-border px-3">About</a>
+                        </li>
+                        <li class="nam-items">
+                            <a href="{% url 'contact' %}" class="nav-link under-border px-3">Contact Us</a>
+                        </li>
+                        <li class="nam-items">
+                            <a href="{% url 'team' %}" class="nav-link under-border px-3">Mentors</a>
+                        </li>
+                        <li class="nam-items">
+                            <a href="{% url 'login' %}" class="nav-link under-border px-3">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Show Case -->
+
+        <section class="bg-dark text-white full-page ">
+            <div class="container full-page centre">
+                <h1 class="fs-1 p-5 glow">TLE Eliminators</h1>
+                <p class="p-4 pt-5 text-centre text-change">TLE Eliminators is a Competitive Programming Membership lead by Priyansh Agarwal</p>
+                <button type="button" class="btn btn-info p-1"><a href="#DSA" class="nav-link text-white">Get
+                        Started</a></button>
+            </div>
+        </section>
+
+        <!-- scroll to top -->
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><span class="fas fa-sort-amount-up fs-4"></span></button>
+
+        <!-- DSA Course -->
+        
+        <section id="DSA" class="d-flex bg-image p-5 text-center shadow-1-strong rounded my-1 text-white"
+        style="background-image: url('{% static 'images/dsa-bg.jpg' %}');
+            height: 120vh; background-repeat: no-repeat; background-size:cover;">
+            <div class="container">
+                <h2 class="px-4 fs-2 m-1">TLE Eliminators</h2>
+                <h1 class="p-4 pt- display-2 fw-bold">DSA <span class="text-primary">COURSE</span> FOR <span class="text-primary">EVERYONE</span></h1>
+                <div class="d-flex flex-row bd-highlight justify-content-around" style="margin: 0px 20%">
+                    <button type="button" class="btn btn-outline-primary text-white fs-5 mt-5" style="margin-top:auto;">Coming Soon</button>
+                    <!-- <a href="https://bit.ly/3nXBstx" target="none"><button type="button" class="btn btn-outline-primary text-white fs-5 mt-5" style="margin-top:auto;">Course Details</button></a> -->
+                </div>
+            <div class="d-flex flex-row bd-highlight mb-3 justify-content-around align-items-end" style="height: calc(80vh - 100px);">
+                <div class="p-2 bd-highlight">
+                    <span style="font-size: 5em; color:white;">
+                        <i class="fas fa-tools text-primary icon-scale"></i>
+                        <p class="lead fs-3 fw-bolder">15 months Experience</p>
+                    </span>
+                </div>
+                <div class="p-2 bd-highlight">
+                    <span style="font-size: 5em; color:white;">
+                        <i class="fas fa-chalkboard-teacher text-primary icon-scale"></i>
+                        <p class="lead fs-3 fw-bolder">Limited Seats only</p>
+                    </span>
+                </div>
+                <div class="p-2 bd-highlight">
+                    <span style="font-size: 5em; color:white;">
+                        <i class="fas fa-play-circle text-primary icon-scale"></i>
+                        <p class="lead fs-3 fw-bolder">25K+ subscribers</p>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CP Course -->
+
+        <section id="CP" class="d-flex p-5 text-center shadow-1-strong rounded text-white" style="background-image: url('{% static 'images/cp-bg.jpg' %}');
+                        filter: dblur(3px);    height: 125vh; background-repeat: no-repeat; background-size:cover;">
+            <span class="bg-image"></span>
+            <div class="container">
+                <h2 class="px-4 fs-2 m-1">TLE Eliminators</h2>
+                <h1 class="p-4 pt- display-2 fw-bolder">CP <span class="text-danger">COURSES</span> FOR <span
+                        class="text-danger">EVERYONE</span></h1>
+                <div class="d-flex flex-row bd-highlight justify-content-around" style="margin: 0px 20%">
+                    <a href="{% url 'register' %}" target="none">    
+                        <button type="button" class="btn btn-outline-danger text-white fs-4 mt-5" style="margin-top:auto;">Register for CP</button>
+                    </a>
+                        <a href="https://bit.ly/3nXBstx" target="none"><button type="button" class="btn btn-outline-danger text-white fs-4 mt-5" style="margin-top:auto;">Course
+                                Details</button>
+						</a>
+                </div>
+                <div class="d-flex flex-row bd-highlight mb-3 justify-content-around align-items-end"
+                    style="height: calc(78vh - 100px);">
+                    <div class="p-2 bd-highlight">
+                        <span style="font-size: 5em; color:white;">
+                            <i class="fas fa-tools text-danger icon-scale"></i>
+                            <p class="lead fs-3 fw-bolder">15 months Experience</p>
+                        </span>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <span style="font-size: 5em; color:white;">
+                            <i class="fas fa-chalkboard-teacher text-danger icon-scale"></i>
+                            <p class="lead fs-3 fw-bolder">600+ course students</p>
+                        </span>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <span style="font-size: 5em; color:white;">
+                            <i class="fas fa-play-circle text-danger icon-scale"></i>
+                            <p class="lead fs-3 fw-bolder">25K+ subscribers</p>
+                        </span>
+                    </div>
+                </div>
+        </section>
+
+        <!-- About Priyansh -->
+        <section id="about" class="section-padding-lg about bg-dark-pattern">
+            <div class="container">
+                <div class="bg"></div>
+                <div class="bg bg2"></div>
+                <div class="bg bg3"></div>
+              <h2 class="text-lg ">
+                Who is <span class="text-danger who-am-i">Priyansh Agarwal?</span>
+              </h2>
+      
+              <div class="about-grid">
+                <img src="{% static 'images/priyansh.jpg' %}" alt="" />
+                <div class="card">
+                  <div class="card-body">
+                    <p class="text-change">
+                        3rd Year Undergrad at IIIT Delhi || Among India's Top 130 Competitive Programmers || Candidate Master (Rating: 2076) on Codeforces || 6* coder (Rating: 2225) on Codechef || YouTuber with over 20k subs
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          
+
+          <section id="social" class="social bg-primary">
+            <div class="container">
+              <h3>Follow Priyansh On</h3>
+              <div>
+                <a href="https://www.youtube.com/c/PriyanshAgarwal" target="_blank">
+                  <span class="sr-only">YouTube</span><i class="fab fa-youtube fa-2x"></i>
+                </a>
+                <a href="https://twitter.com/Priyansh_31Dec" target="_blank">
+                  <span class="sr-only">Twitter</span><i class="fab fa-twitter fa-2x"></i>
+                </a>
+                <a href="https://discord.gg/ewNnepYN" target="_blank">
+                  <span class="sr-only">Discord</span><i class="fab fa-discord fa-2x"></i>
+                </a>
+                <a href="https://codeforces.com/profile/Priyansh31dec" target="_blank">
+                  <img id="codeforces" src="{% static 'images/cf_red.png' %}" alt="Codeforces">
+                </a>
+                <a href="https://www.linkedin.com/in/priyansh-agarwal-88046619a/" target="_blank">
+                  <span class="sr-only">Linkedin</span><i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://www.codechef.com/users/priyansh19077" target="_blank">
+                    <img id="codechef" src="{% static 'images/image.png' %}" alt="Codechef">
+                  </a>
+              </div>
+            </div>
+          </section>
+
+          <!-- Testimonials -->
+        <section class="text-white bg-dark" style="height: auto; padding-top: 80px;">
+            <div class="text-center">
+                <h1 class="lead fw-bolder" style="font-size: 39px; color: rgb(247, 247, 247);">Testimonials</h1>
+                <p class="lead mt-4 fw-bold" style="color: rgb(202, 207, 203); font-size: 25px;">Read what students from previous batches have to say about TLE's courses</p>
+            </div>
+            <div class="container" style="margin-top: 90px; padding-bottom: 130px ;">
+                <!-- row1 -->
+                <div class="row" style="grid-gap: 90px 80px;">
+                    <div class="col p-3 pb-1 icon-scale" style="background-color: rgb(11, 97, 177); border-radius: 13px;">
+                        <a href="https://www.linkedin.com/in/siddhanth-verma/" target="none" style="text-decoration: none;">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <img src="{% static 'images/siddhanthTLE.jpeg' %}" alt="" style="height: 90px; width: 90px; border-radius: 50%;">
+                                </div>
+                                <div class="col">
+                                    <p class="fw-bold lead">Siddhanth Verma</p>
+                                    <p style="font-size: 22px; font-weight: 400;">course: <span class=" lead" style="font-size: 20px; font-weight: 600;">Level I</span></p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/siddhanth-verma/" target="none" style="text-decoration: none;">
+                        <p style="font-size: 18px; padding-top: 15px;">Hello Everyone,
+                            After 42 Contest, 487 problems, and countless hours of effort I have finally reached #Specialist on #codeforces.
+                            Thanks to codeforces for back-to-back contests before 2022 begins Hope it would be a great year for everyone 🤞. A big thanks to Priyansh Agarwal for being such a nice mentor and providing a wonderful environment at TLE Eliminators. Now it's time to move forward and hoping to reach #Expert within 3 months</p></a>
+                    </div>
+                    <div class="col p-3 pb-1 icon-scale" style="background-color: rgb(11, 97, 177); border-radius: 13px;">
+                        <a href="https://www.linkedin.com/in/tushar-mahajan-a02b62196/" target="none" style="text-decoration: none;">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <img src="{% static 'images/TuharTLE.jpeg' %}" alt="" style="height: 90px; width: 90px; border-radius: 50%;">
+                                </div>
+                                <div class="col">
+                                    <p class="fw-bold lead">Tushar Mahajan</p>
+                                    <p style="font-size: 22px; font-weight: 400;">course: <span class=" lead" style="font-size: 20px; font-weight: 600;">Level II</span></p>
+                                </div>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/tushar-mahajan-a02b62196/" target="none" style="text-decoration: none;">
+                        <p style="font-size: 18px; padding-top: 15px;">Hello Everyone!
+                            I am incredibly excited to share that I have finally achieved a 5 star rating on CodeChef. I secured a global rank of 41 in Exun 2021-22 (Division-2) which is my best performance in any CodeChef Contest.
+                            I would like to thank Priyansh Agarwal and TLE Eliminators for their constant support and mentorship.</p></a>
+                    </div>
+                </div>
+                    <!-- row2 -->
+                <div class="row" style="grid-gap: 90px 80px; padding-top: 100px;">
+                    <div class="col p-3 pb-1 icon-scale" style="background-color: rgb(11, 97, 177); border-radius: 13px;">
+                        <a href="https://www.linkedin.com/in/manav-kumar-jaiswal-512035182/" target="none" style="text-decoration: none;">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <img src="{% static 'images/ManavTLE.jpeg' %}" alt="" style="height: 90px; width: 90px; border-radius: 50%;">
+                                </div>
+                                <div class="col">
+                                    <p class="fw-bold lead">Manav Kumar Jaiswal</p>
+                                    <p style="font-size: 22px; font-weight: 400;">course: <span class=" lead" style="font-size: 20px; font-weight: 600;">Level II</span></p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/manav-kumar-jaiswal-512035182/" target="none" style="text-decoration: none;"><p style="font-size: 18px; padding-top: 15px;">Guys, with the help of TLE Eliminators and after solving 350+ problems on CodeForces, I am finally a SPECIALIST. In the previous batch of TLE Eliminators, My rating has increased from 800 to 1300 and almost after two months of this batch I am rated 1406. Although it took much time to move from 1300 to 1406, all the time and energy invested was worth it. Thanks to Priyansh Agarwal for starting TLE Eliminators in the first place.</p></a>
+                    </div>
+                    <div class="col p-3 pb-1 icon-scale" style="background-color: rgb(11, 97, 177); border-radius: 13px;">
+                        <a href="https://www.linkedin.com/in/vibalijoshi/" target="none" style="text-decoration: none;">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <img src="{% static 'images/vibali.jpg' %}" alt="" style="height: 90px; width: 90px; border-radius: 50%;">
+                                </div>
+                                <div class="col">
+                                    <p class="fw-bold lead">Vibali Joshi</p>
+                                    <p style="font-size: 22px; font-weight: 400;">course: <span class=" lead" style="font-size: 20px; font-weight: 600;">Level I</span></p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/vibalijoshi/" target="none" style="text-decoration: none;"><p style="font-size: 18px; padding-top: 15px;">You guys have managed to provide v high quality content in these 3-4 months. Worth it to invest time here......got to learn a lot from the community</p></a>
+                    </div>
+                </div>
+            </div>
+          </section>
+        
+
+          <section id="youtube" class="section-padding-lg">
+            <div class="container">
+              <div class="youtube-grid">
+                <iframe width="460" height="270" src="https://www.youtube-nocookie.com/embed/nxR4eTC4TRU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div>
+                  <h2 class="text-lg text-center">Priyansh Agarwal on YouTube</h2>
+                  <p class="lead text-center">Our YouTube channel has many coding-contest screencasts and several free tips for cp enthusiasts</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    </body>
+    <footer>
+        <div id="downward" class="footer-content">
+            <h3>TLE Eliminators</h3>
+            <p>An initiative to encourage the culture of competitive programming in students</p>
+            <ul class="socials">
+                <li><a href="https://discord.gg/ewNnepYN" target="none"><i class="fab fa-discord fa-2x"></i></a></li>
+                <li><a href="https://twitter.com/Priyansh_31Dec" target="none"><i class="fab fa-twitter fa-2x"></i></a></li>
+                <li><a href="https://www.youtube.com/c/PriyanshAgarwal" target="none"><i class="fab fa-youtube fa-2x"></i></a></li>
+                <li><a href="https://www.linkedin.com/company/tle-eliminators/" target="none"><i class="fab fa-linkedin fa-2x"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy;2022 TLE. designed by <span><a href="https://www.linkedin.com/in/anuj-yadav-44b9b4216/" target="none"><strong>Anuj</strong></a>,<a href="https://www.linkedin.com/in/adityagarg24/" target="none"> <strong>Aditya</strong></a>,<a href="https://www.linkedin.com/in/shivansh-choudhary-22110218b/" target="none"> <strong>Shivansh</strong></a> and <a href="https://www.linkedin.com/in/sparsh-mehrotra-0442a8212/" target="none"><strong>Sparsh</strong></a></span></p>
+        </div>
+    </footer>
+    <script src="{% static 'JS/sscriptName.js' %}"></script>
+
+</html>

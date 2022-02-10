@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
+
+* {
+  /* border: 1px solid rgb(247, 3, 3); */
+}
+
+.change-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-bg {
+  background-image: url("../images/right-test2.jpg");
+  background-size: cover;
+}
+
+.right-bg {
+  background-size: cover;
+  background: rgb(34, 34, 34);
+  height: 100vh;
+}
+
+.form-label {
+  margin-top: 20px;
+}
+
+.container2 {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.font-cust {
+  font-family: "Libre Baskerville", serif;
+  transition-duration: 0.3s;
+}
+
+.font-cust:hover {
+  letter-spacing: 4px;
+  transition-duration: 0.3s;
+}
+
+#login-btn {
+  color: rgb(255, 255, 255);
+  background: rgb(10, 172, 236);
+  transition-duration: 0.3s;
+}
+
+#login-btn:hover {
+  background: rgb(27, 218, 154);
+  transition-duration: 0.3s;
+  transform-origin: bottom;
+}
+
+#login-btn2 {
+  color: rgb(255, 255, 255);
+  background: rgb(24, 187, 133);
+  transition-duration: 0.3s;
+}
+
+#login-btn2:hover {
+  background: rgb(16, 150, 105);
+  transition-duration: 0.3s;
+  transform-origin: bottom;
+}
+
+/*  */
+
+.slide-animation {
+  position: relative;
+  animation: tryout;
+  animation-duration: 1.1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes tryout {
+  from {
+    opacity: 0.01;
+  }
+  to {
+    opacity: 1;
+  }
+}

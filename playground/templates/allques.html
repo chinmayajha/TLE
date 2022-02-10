@@ -1,0 +1,9 @@
+{%for key,value in alllinks.items%}
+<p>{{key}}
+	<span>
+		<button>
+			<a href="{{value.link}}" target="none">Attempt</a>
+		</button>
+	</span>
+</p>
+{%endfor%}

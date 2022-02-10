@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register</title>
+    <link rel="shortcut icon" href="{% static 'images/tle_logo.jpeg' %}" type="image/x-icon"/>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+      crossorigin="anonymous"
+    />
+
+    	<style>
+      		#success_message{ display: none;}
+			body {
+				background-size: 100% 110%;
+				background-repeat: no-repeat;
+			} 
+			.container {
+				text-align: center;
+				color : #007bff;;
+				margin-top: 10px;
+			}
+			*{
+				/* border: 1px solid black; */
+			}
+    	</style>
+  	</head>
+
+  	<body style="height : 100vh;" class="bg-dark">
+		<section class="register" style="display: grid;">
+			<header style="height:100px;"></header>
+			  <div class="row bg-light" style="margin-left:140px; margin-right:140px; border-radius:15px;">
+				<img  class="tw_img col-md-6" src="{% static 'images/tw_img.jpg' %}" alt="" style="height:630px;width:500px;">  
+				<div class="col-md-6 container" style="padding:0px;">
+				<form class="well form-horizontal" action=" " method="post"  id="contact_form" style="display:flex; flex-direction:column; align-items:center; padding-bottom: 15px;">
+				{% csrf_token %}
+					<fieldset>
+	
+				<!-- Form Name -->
+				<legend><center><h2><b>Registration Form</b></h2></center></legend><br>
+				<p style="color: rgb(255, 0, 0)">{{error}}</p>
+				<!-- Text input-->
+	
+				<div class="form-group">
+					<div class="input-group">
+						<!-- <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
+						<input name="username" placeholder="Username.." class="form-control input-bar2"  type="text" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<!-- <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
+						<input name="discord_handle" placeholder="Codeforces handle.." class="form-control input-bar2"  type="text" required>
+					</div>
+				</div>
+	
+				<div class="form-group"> 
+					<div class="">
+						<!-- <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span> -->
+							<div><p style="color: black; font-weight: 400; font-size: 19px;">Choose your course</p></div>
+							<div class="d-flex">
+								<input type="checkbox" id="CP" name="CP1" class="checkbox-style" style="margin-top: 6px;"><label for="CP1" class="mr-5" style="color: black; font-weight: 400; font-size: 17px;">CP1</label>
+								<input type="checkbox" id="CP4" name="CP2" class="checkbox-style" style="margin-top: 6px;"><label for="CP2" class="mr-5" style="color: black; font-weight: 400; font-size: 17px;">CP2</label>
+								<input type="checkbox" id="CP4" name="CP3" class="checkbox-style" style="margin-top: 6px;"><label for="CP3" style="color: black; font-weight: 400; font-size: 17px;">CP3</label>
+							</div>
+					</div>
+				</div>
+				
+				<!-- Text input-->
+	
+				<!-- Text input-->
+	
+				<div class="form-group">
+					<div class="input-group">
+						<!-- <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
+						<input name="password1" placeholder="Password.." class="form-control input-bar2"  type="password" required>
+					</div>
+				</div>
+	
+				<!-- Text input-->
+	
+				<div class="form-group">
+					<div class="input-group">
+						<!-- <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
+						<input name="password2" placeholder="Confirm Password.." class="form-control input-bar2"  type="password" required>
+					</div>
+				</div>
+	
+				<!-- Text input-->
+					<div class="form-group"> 
+					<div class="input-group">
+						<!-- <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span> -->
+						<input name="email" placeholder="E-mail.." class="form-control input-bar2"  type="email" required>
+					</div>
+				</div>
+	
+	
+				<!-- Text input-->
+					
+				<div class="form-group"> 
+					<div class="input-group">
+						<!-- <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span> -->
+						<input name="phone" placeholder="Mob.no.." class="form-control input-bar2" type="number" required>
+					</div>
+				</div>
+	
+				<!-- Select Basic -->
+				<!-- Button -->
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary" >SUBMIT <span class="glyphicon glyphicon-send"></span></button>
+				</div>
+				<p class="small fw-bold mt-2 pt-1 mb-0" style="color: black">
+				  Already have an account?
+				  <a
+					href="{% url 'login' %}"
+					class="link"
+					style="color: dodgerblue"
+					>Login</a
+				  >
+				</p>
+				</fieldset>
+				
+				</form>
+				</div>
+			</div><!-- /.container --></div>
+		</section>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"></script>
+  	</body>
+</html>

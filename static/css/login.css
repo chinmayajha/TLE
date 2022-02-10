@@ -1,0 +1,154 @@
+body,
+html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  /* border: 1px solid orange; */
+}
+
+.container-fluid {
+  padding: 0px;
+}
+
+span {
+  background-color: #0a85ed;
+  opacity: 0.7;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #287bf6,
+      0 0 40px #287bf6, 0 0 50px #287bf6, 0 0 60px #287bf6, 0 0 70px #287bf6;
+  }
+  to {
+    /* text-shadow: 0 0 20px #fff, 0 0 30px #BDF63F, 0 0 40px #BDF63F, 0 0 50px #BDF63F, 0 0 60px #BDF63F, 0 0 70px #BDF63F, 0 0 80px #BDF63F; */
+  }
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("bgd.jpg");
+  /* Control the height of the image */
+  min-height: 380px;
+
+  height: 100vh;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  opacity: 0.9;
+  object-fit: cover;
+}
+
+/* Add styles to the form container */
+.container {
+  position: relative;
+  right: 0;
+  margin: 20px;
+  margin-top: 40%;
+  margin-left: 15%;
+  bottom: 15%;
+  max-width: 300px;
+  padding: 16px;
+  color: white;
+  justify-self: center;
+}
+
+label {
+  transition: all 0.1s;
+}
+
+label:hover {
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+}
+
+/* Full-width input fields */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: none;
+  border-bottom: 3px solid white;
+  color: white;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+  padding: 1.5rem;
+  background-color: transparent;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #0a85ed;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.blur {
+  filter: blur(10px);
+}
+
+.social_icons img {
+  height: 30px;
+}
+.social_icons {
+  border-radius: 50%;
+  position: relative;
+  bottom: 60px;
+  /* margin-bottom: 0px; */
+  z-index: 100;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  list-style: none;
+}
+
+.social_icons p {
+  padding-top: 3px;
+  padding-right: 5px;
+  color: white;
+}
+
+.social_icons li a {
+  display: inline-block;
+  filter: invert();
+  margin-right: 20px;
+  transition: 0.5s;
+}
+
+.social_icons li a:hover {
+  border-radius: 50%;
+  /* box-shadow: 10px 10px 10px #0A85ED; */
+  filter: contrast();
+  transform: translateY(-15px);
+}
