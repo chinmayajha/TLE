@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['https://tle-eliminators1.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://tle-eliminators.herokuapp.com']
 
 # Application definition
 
