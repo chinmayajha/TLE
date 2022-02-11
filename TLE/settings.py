@@ -26,8 +26,9 @@ SECRET_KEY = 'django-insecure-)3)u9h5v66*j9-s)^@!84fq#()6a71_wrjbfx@_fo28sw#%)@a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = ['https://tle-eliminators1.herokuapp.com']
 
 # Application definition
 
