@@ -130,3 +130,4 @@ wrapt==1.12.1
 xmltodict==0.12.0
 yapf==0.31.0
 yarl==1.6.3
+psycopg2-binary==2.9.3
