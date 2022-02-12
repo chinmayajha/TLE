@@ -78,10 +78,22 @@ WSGI_APPLICATION = 'TLE.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':'d3rodoekqgi62k',
+        'USER': 'gsiezayvirhgpz',
+        'PASSWORD':'dbc7769d78b0d69fb04b1cbaec758a20c293463228469fb0cb6ffe83fb2cd1b5',
+        'HOST': 'ec2-50-19-32-96.compute-1.amazonaws.com',
+        'PORT': '5432'
+    }
+}
+'''
+DATABASES = {
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+'''
 
 
 # Password validation
