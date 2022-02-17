@@ -108,38 +108,46 @@ def resources_page(request):
 
 @login_required(login_url='login')
 def dailytask_page(request):
-    dailytask = {}
-    all_tasks = []
-    category = ""
-    handle = Customer.objects.get(username=request.user.id).cf_handle
-    if(Customer.objects.get(username=request.user.id).CP1):
-        category = 'CP1'
-        all_tasks.append(DailyTask.objects.filter(category='CP1'))
-    if(Customer.objects.get(username=request.user.id).CP2):
-        category = 'CP2'
-        all_tasks.append(DailyTask.objects.filter(category="CP2"))
-    if(Customer.objects.get(username=request.user.id).CP3):
-        all_tasks.append(DailyTask.objects.filter(category="CP3"))
-    if(Customer.objects.get(username=request.user.id).DSA1):
-        all_tasks.append(DailyTask.objects.filter(category="DSA1"))
-    if(Customer.objects.get(username=request.user.id).DSA2):
-        all_tasks.append(DailyTask.objects.filter(category="DSA2"))
-    time = datetime.datetime.now()
-    delta = datetime.timedelta(2)
-    time = time-delta
-    alllinks = {}
-    for dailytask in all_tasks:
-        for temp in dailytask:
-            current = (temp.date_created)
-            current = datetime.datetime(
-                current.year, current.month, current.day)
-            if(time < current and (not fetch_call(handle, category, temp.link))):
-                local = {
-                    'link': temp.link,
-                }
-                alllinks[temp.description] = local
-    alllinks = OrderedDict(reversed(list(alllinks.items())))
-    return render(request, 'dailytask.html', {'alllinks': alllinks})
+	dailytask = {}
+	all_tasks = []
+	category = ""
+	handle = Customer.objects.get(username=request.user.id).cf_handle
+	if(Customer.objects.get(username=request.user.id).CP1):
+		category = 'CP1'
+		all_tasks.append(DailyTask.objects.filter(category='CP1'))
+	if(Customer.objects.get(username=request.user.id).CP2):
+		category = 'CP2'
+		all_tasks.append(DailyTask.objects.filter(category="CP2"))
+	if(Customer.objects.get(username=request.user.id).CP3):
+		all_tasks.append(DailyTask.objects.filter(category="CP3"))
+	if(Customer.objects.get(username=request.user.id).DSA1):
+		all_tasks.append(DailyTask.objects.filter(category="DSA1"))
+	if(Customer.objects.get(username=request.user.id).DSA2):
+		all_tasks.append(DailyTask.objects.filter(category="DSA2"))
+	time = datetime.datetime.now()
+	delta = datetime.timedelta(2)
+	time = time-delta
+	alllinks = {}
+	for dailytask in all_tasks:
+		for temp in dailytask:
+			current = (temp.date_created)
+			current = datetime.datetime(current.year, current.month, current.day)
+			if(time < current):
+				done=fetch_call(handle,category,temp.link)
+				local={}
+				if done:
+					local = {
+						'link': temp.link,
+						'done' : {'answer': 'done'}
+						}
+				else: 
+					local = {
+						'link': temp.link,
+						'done': None,
+					}
+				alllinks[temp.description] = local
+	alllinks = OrderedDict(reversed(list(alllinks.items())))
+	return render(request, 'dailytask.html', {'alllinks': alllinks})
 
 
 @login_required(login_url='login')

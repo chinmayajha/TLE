@@ -102,21 +102,26 @@
         <div class="container section-padding-lg">
           <div class="grid">
             <div class="row">
-              <div class="col text-centre">
-                <h2 class="fs-1">{{key}}</h2>
-              </div>
-              <div class="col text-centre">
-                <button class="btn btn-danger fs-5" style="box-shadow: 3px 2px 5px 1px #000000">
-                  <a href="{{value.link}}" class="text-white" style="text-decoration: none" target="none">Click Here</a>
-                </button>
-              </div>
+              	<div class="col text-centre">
+                	<h2 class="fs-1">{{key}}</h2>
+              	</div>
+			  	<div class="col-lg-2 text-centre">
+					{%for key,value in value.done.items%}
+						<img src="{% static 'images/correct.png' %}" alt="" srcset="" style="height: 40px; width: 40px;">
+					{%endfor%}
+				</div>
+              	<div class="col text-centre">
+                	<button class="btn btn-danger fs-5" style="box-shadow: 3px 2px 5px 1px #000000">
+                 	<a href="{{value.link}}" class="text-white" style="text-decoration: none" target="none">Click Here</a>
+                	</button>
+              	</div>
             </div>
           </div>
         </div>
         {%endfor%}
         <div class="text-centre">
           <button class="btn btn-danger fs-5" style="box-shadow: 3px 2px 5px 1px #000000">
-            <a href="{% url 'allq' %}" class="text-white" style="text-decoration: none" target="none">Show more</a>
+            <a href="{% url 'allq' %}" class="text-white" style="text-decoration: none" target="none">Show all</a>
           </button>
         </div>
       </section>

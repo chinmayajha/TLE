@@ -60,13 +60,13 @@
         <div class="container section-padding-lg">
           <div class="grid">
             <div class="row">
-              <div class="col-lg-3 text-centre d-flex">
-                <h2 id="winner_name" class="fs-1">{{key}}</h2>
-                <span style="margin-left: 20px;"></span>
-              </div>
+              	<div class="col-lg-3 text-centre d-flex">
+					<h2 id="winner_name" class="fs-1">{{key}}</h2>
+					<span style="margin-left: 20px;"></span>
+            	</div>
                 <div class="col-lg-2 text-centre">
                     {%for key,value in value.star.items%}
-                        <img src="{% static 'images/medal.png' %}" alt="" srcset="" style="height: 40px; width: 40px; margin-left: ;">
+                        <img src="{% static 'images/medal.png' %}" alt="" srcset="" style="height: 40px; width: 40px;">
                     {%endfor%}
                 </div>
               <div class="col-lg-4 text-centre" style="margin-left: 16vw;">
