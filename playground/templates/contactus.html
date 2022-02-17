@@ -38,23 +38,28 @@
             <div class="text-centre font-cust text-white mt-5 mb-5">
                 <h2>Contact Us</h2>
             </div>
+			
+			<div class="text-centre text-white mt-5 mb-5">
+				<p style="color: rgb(16, 230, 16)">{{error}}</p>
+            </div>
 
-            <form class="mb-4 container text-white was-validated test-sg drop-out">
+            <form class="mb-4 container text-white was-validated test-sg drop-out" action="" method="post">
+				{% csrf_token %}
                 <div class="mb-4 mt-3 div-form">
                     <label class="form-label drop-left">Full Name</label>
-                    <input type="text" class="form-control drop-right input-box bg-dark text-white" id="uname" placeholder="Enter full name" required>
+                    <input type="text" class="form-control drop-right input-box bg-dark text-white" id="uname" name="uname" placeholder="Enter full name" required>
                 </div>
                 <div class="mb-4 mt-3 div-form">
                     <label class="form-label drop-left">Email</label>
-                    <input type="email" class="form-control drop-right input-box bg-dark text-white" id="uname" required placeholder="Enter email">
+                    <input type="email" class="form-control drop-right input-box bg-dark text-white" id="email" name="email" required placeholder="Enter email">
                 </div>
                 <div class="mb-4 mt-3 div-form">
                     <label class="form-label drop-left">Contact Number</label>
-                    <input type="number" class="form-control drop-right input-box bg-dark text-white" id="uname" placeholder="Enter contact number" required>
+                    <input type="number" class="form-control drop-right input-box bg-dark text-white" id="phone" name="phone" placeholder="Enter contact number" required>
                 </div>
                 <div class="mb-4 mt-3 div-form">
                     <label class="form-label drop-left">Drop your query Here</label>
-                    <textarea class="form-control input-box bg-dark text-white" id="exampleFormControlTextarea1" rows="3" required placeholder="Enter Query" minlength="5"></textarea>
+                    <textarea class="form-control input-box bg-dark text-white" id="subject" name="subject" rows="3" required placeholder="Enter Query" minlength="5"></textarea>
                     <div class="valid-feedback"></div>
                 </div>
                 <div class="btn2">

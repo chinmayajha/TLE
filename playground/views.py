@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
 import datetime
 from .fetch import *
 
@@ -218,7 +219,26 @@ def logout_page(request):
 
 
 def contact_page(request):
-    return render(request, 'contactus.html')
+	if request.method == 'POST':
+		username = request.POST.get('uname')
+		email = request.POST.get('email')
+		phone = request.POST.get('phone')
+		subject = request.POST.get('subject')
+		data = {
+			'username': username,
+			'email': email,
+			'phone': phone,
+			'subject': subject
+		}
+		message = ''' 
+			New Message from: {}
+			Email: {}
+			Phone: {}
+			Query: {}
+		'''.format(data['username'], data['email'], data['phone'] , data['subject'])
+		send_mail('TLE Queries', message, '',['tle.eliminators@gmail.com'])
+		return render(request, 'contactus.html', {'error': 'Message sent successfully. We will get back to you soon.'})
+	return render(request, 'contactus.html')
 
 
 def team_page(request):
