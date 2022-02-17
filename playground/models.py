@@ -19,6 +19,7 @@ class Customer(models.Model):
 	category5 = models.BooleanField(name='CP3')
 	score1=models.IntegerField(default=0)
 	score2=models.IntegerField(default=0)
+	score3=models.IntegerField(default=0)
 	def __str__(self):
 		return self.username.username
         

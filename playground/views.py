@@ -119,6 +119,7 @@ def dailytask_page(request):
 		category = 'CP2'
 		all_tasks.append(DailyTask.objects.filter(category="CP2"))
 	if(Customer.objects.get(username=request.user.id).CP3):
+		category = 'CP3'
 		all_tasks.append(DailyTask.objects.filter(category="CP3"))
 	if(Customer.objects.get(username=request.user.id).DSA1):
 		all_tasks.append(DailyTask.objects.filter(category="DSA1"))
@@ -152,51 +153,62 @@ def dailytask_page(request):
 
 @login_required(login_url='login')
 def leaderboard_page(request):
-    all_scores = []
-    category = ""
-    # current user ki category
-    if(Customer.objects.get(username=request.user.id).CP1):
-        category = 'CP1'
-    if(Customer.objects.get(username=request.user.id).CP2):
-        category = 'CP2'
+	all_scores = []
+	category = ""
+	# current user ki category
+	if(Customer.objects.get(username=request.user.id).CP1):
+		category = 'CP1'
+	if(Customer.objects.get(username=request.user.id).CP2):
+		category = 'CP2'
+	if(Customer.objects.get(username=request.user.id).CP3):
+		category = 'CP3'
 
-    # all users ki category
-    for student in Customer.objects.all():
-        if(category == 'CP1' and student.CP1):
-            current_score = get_lb1(student.cf_handle)
-            if(current_score >= student.score1):
-                student.score1 = current_score
-                student.save()
-            all_scores.append([student.score1, student.cf_handle])
-        if(category == 'CP2' and student.CP2):
-            current_score = get_lb2(student.cf_handle)
-            if(current_score >= student.score2):
-                student.score2 = current_score
-                student.save()
-            all_scores.append([student.score2, student.cf_handle])
+	# all users ki category
+	for student in Customer.objects.all():
+		if(category == 'CP1' and student.CP1):
+			current_score = get_lb1(student.cf_handle)
+			if(current_score >= student.score1):
+				student.score1 = current_score
+				student.save()
+			all_scores.append([student.score1, student.cf_handle])
+		if(category == 'CP2' and student.CP2):
+			current_score = get_lb2(student.cf_handle)
+			if(current_score >= student.score2):
+				student.score2 = current_score
+				student.save()
+			all_scores.append([student.score2, student.cf_handle])
+		if(category == 'CP3' and student.CP3):
+			current_score = get_lb3(student.cf_handle)
+			if(current_score >= student.score3):
+				student.score3 = current_score
+				student.save()
+			all_scores.append([student.score3, student.cf_handle])
 
-    # sorting and taking top 3
-    all_scores.sort(reverse=True)
-    # print(all_scores)
-    sendingvalues = {}
-    index = min(3, len(all_scores))
-    for i in range(min(3, len(all_scores))):
-        temp = {}
-        for j in range(index):
-            temp[j] = j
-        index -= 1
-        sendingvalues[all_scores[i][1]] = {
-            'star': temp, 'score': all_scores[i][0]}
+	# sorting and taking top 3
+	all_scores.sort(reverse=True)
+	# print(all_scores)
+	sendingvalues = {}
+	index = min(3, len(all_scores))
+	for i in range(min(3, len(all_scores))):
+		temp = {}
+		for j in range(index):
+			temp[j] = j
+		index -= 1
+		sendingvalues[all_scores[i][1]] = {
+			'star': temp, 'score': all_scores[i][0]}
 
-    # print(sendingvalues)
-    if(Customer.objects.get(username=request.user.id).cf_handle not in sendingvalues.keys()):
-        if(Customer.objects.get(username=request.user.id).CP2):
-            sendingvalues['Your score'] = {
-                'star': {}, 'score': Customer.objects.get(username=request.user.id).score2}
-        elif(Customer.objects.get(username=request.user.id).CP1):
-            sendingvalues['Your score'] = {
-                'star': {}, 'score': Customer.objects.get(username=request.user.id).score1}
-    return render(request, 'leaderboard.html', {'leaderboard': sendingvalues})
+	# print(sendingvalues)
+	if(Customer.objects.get(username=request.user.id).cf_handle not in sendingvalues.keys()):
+		if(Customer.objects.get(username=request.user.id).CP3):
+			sendingvalues['Your score'] = {
+				'star': {}, 'score': Customer.objects.get(username=request.user.id).score3}
+		elif(Customer.objects.get(username=request.user.id).CP2):
+			sendingvalues['Your score'] = {
+				'star': {}, 'score': Customer.objects.get(username=request.user.id).score2}
+		elif(Customer.objects.get(username=request.user.id).CP1):
+			sendingvalues['Your score'] = {
+				'star': {}, 'score': Customer.objects.get(username=request.user.id).score1}
+	return render(request, 'leaderboard.html', {'leaderboard': sendingvalues})
 
 
 @login_required(login_url='login')
