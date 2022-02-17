@@ -236,7 +236,7 @@ def contact_page(request):
 			Phone: {}
 			Query: {}
 		'''.format(data['username'], data['email'], data['phone'] , data['subject'])
-		send_mail('TLE Queries', message, '',['tle.eliminators@gmail.com'])
+		#send_mail('TLE Queries', message, '',['tle.eliminators@gmail.com'])
 		return render(request, 'contactus.html', {'error': 'Message sent successfully. We will get back to you soon.'})
 	return render(request, 'contactus.html')
 
